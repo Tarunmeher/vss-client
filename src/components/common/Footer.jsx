@@ -1,4 +1,5 @@
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import logo from '../../assets/images/logoo.jpg'
 
 
 const Footer = () => {
@@ -8,8 +9,8 @@ const Footer = () => {
 
         {/* College Name & Logo */}
         <div>
-          <img src={''} alt="College Logo" className="h-12 mb-3" />
-          <h2 className="text-2xl font-bold">Lambodar Higher Secondary School Of Science</h2>
+          <img src={logo} alt="College Logo" className="h-20 mb-3" />
+          <h2 className="text-2xl font-bold"> Vrindavan Smart School</h2>
           <p className="text-gray-400 mt-2">Shaping the future with quality education.</p>
         </div>
 
@@ -45,7 +46,7 @@ const Footer = () => {
 
       {/* Bottom Section */}
       <div className="text-center text-gray-500 text-sm mt-6 border-t border-gray-700 pt-4">
-        © {new Date().getFullYear()} LCS Group Of Institutions. All rights reserved.
+        © {new Date().getFullYear()} Vrindavan Smart School. All rights reserved.
       </div>
     </footer>
   );

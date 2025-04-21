@@ -49,7 +49,7 @@ export default function LCSGallery() {
     return (
         <section className="py-10 bg-yellow-20">
             <div className="container mx-auto text-center" data-aos="fade-up">
-                <h2 className="text-3xl font-bold text-gray-800 mb-6">LCS Gallery</h2>
+                <h2 className="text-3xl font-bold text-gray-800 mb-6">VSS Gallery</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-6 gap-4 p-4">
                     {images && images.map((img, index) => (
                         <div key={index} className="relative cursor-pointer" onClick={() => setSelectedImage(`${import.meta.env.VITE_SERVICE_URL}/files/${img.name}`)} data-aos="zoom-in">

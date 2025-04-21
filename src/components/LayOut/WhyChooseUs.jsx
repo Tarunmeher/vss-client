@@ -21,7 +21,7 @@ const data = [
         icon: "₹",
         title: "Most Affordable in India",
         description:
-            "SkyySkill’s programs are most affordable in market to help everyone pursue their desired course without worrying about cost.",
+            "VSS programs are most affordable in market to help everyone pursue their desired course without worrying about cost.",
         bgColor: "bg-gradient-to-r from-yellow-400 to-red-500",
     },
 ];
@@ -39,7 +39,7 @@ const WhyChooseUs = () => {
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-5 w-5 bg-blue-600"></span>
                     </span>
-                    Why <span className="text-blue-600 inline-block" data-aos="fade-up">LCS</span>
+                    Why <span className="text-blue-600 inline-block" data-aos="fade-up">VSS</span>
                 </h2>
                 <p className="mt-2 text-gray-600 text-lg" data-aos="fade-up">
                     Leading E-learning & Skill Development Platform. We are catering in 7
