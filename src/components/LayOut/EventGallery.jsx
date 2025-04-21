@@ -3,7 +3,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import banner from '../../assets/images/banner3.png'
 
 const galleryImages = [
   import.meta.env.VITE_SERVICE_URL + '/siteimages/class4.jpg',
@@ -25,22 +24,22 @@ export default function EventGallery() {
   }, []);
 
   return (
-    <div className="bg-gray-50">
-      <div className="container mx-auto px-4 py-12">
+    <div className="bg-gradient-to-br from-[#f0f8ff] to-[#e0f2fe] py-16 px-4 md:px-10">
+      <div className="max-w-7xl mx-auto">
         <h1
-          className="text-4xl font-bold text-center text-gray-800 mb-12 relative pb-2"
-          data-aos='fade-down'
+          className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12 relative pb-4"
+          data-aos="fade-down"
         >
           Events & Gallery
-          <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-[#0077b6] rounded-full"></span>
+          <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-[#0077b6] rounded-full"></span>
         </h1>
 
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Event Section */}
+        <div className="flex flex-col lg:flex-row gap-10">
+          {/* Events Section */}
           <div className="w-full lg:w-1/2">
             {events.length ? (
               <motion.div
-                className="bg-white rounded-xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl"
+                className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden transition-all hover:shadow-[0_10px_40px_rgba(0,0,0,0.1)]"
                 data-aos="fade-right"
               >
                 <img
@@ -49,36 +48,27 @@ export default function EventGallery() {
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-6">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                    {events[currentEvent].title}
-                  </h2>
-                  <p className="text-gray-600 mb-6">
-                    {events[currentEvent].desc}
-                  </p>
-                  <Link to='/Gallery/lcs-events'>
-                    <button className="px-6 py-3 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-all flex items-center gap-2">
-                      View More
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
+                  <h2 className="text-2xl font-bold text-gray-800 mb-2">{events[currentEvent].title}</h2>
+                  <p className="text-gray-600 mb-6">{events[currentEvent].desc}</p>
+                  <Link to="/Gallery/lcs-events">
+                    <button className="bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:scale-105 transition-transform">
+                      View More →
                     </button>
                   </Link>
                 </div>
               </motion.div>
             ) : (
               <motion.div
-                className="bg-white rounded-xl shadow-xl overflow-hidden"
+                className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden"
                 data-aos="fade-right"
               >
                 <img
                   src={`${import.meta.env.VITE_SERVICE_URL}/siteimages/event.jpg`}
-                  alt={'No Events are Scheduled'}
+                  alt="No Events"
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-6">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                    Events not Available
-                  </h2>
+                  <h2 className="text-2xl font-bold text-gray-800">Events not Available</h2>
                 </div>
               </motion.div>
             )}
@@ -87,10 +77,10 @@ export default function EventGallery() {
           {/* Gallery Section */}
           <div className="w-full lg:w-1/2">
             <motion.div
-              className="bg-white rounded-xl shadow-xl p-6"
+              className="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl p-6"
               data-aos="fade-left"
             >
-              <h2 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-200">
+              <h2 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b border-gray-300">
                 Gallery
               </h2>
               <div className="grid grid-cols-2 gap-4">
@@ -98,23 +88,20 @@ export default function EventGallery() {
                   <motion.div
                     key={index}
                     className="overflow-hidden rounded-lg shadow-md"
-                    whileHover={{ scale: 1.03 }}
+                    whileHover={{ scale: 1.05 }}
                   >
                     <img
                       src={img}
-                      alt="Gallery Item"
+                      alt="Gallery"
                       className="w-full h-40 object-cover transition-transform duration-500 hover:scale-110"
                     />
                   </motion.div>
                 ))}
               </div>
               <div className="mt-8 text-center">
-                <Link to='/Gallery/lcs-gallery'>
-                  <button className="px-6 py-3 bg-[#0077b6] text-white hover:text-black font-semibold rounded-lg hover:bg-yellow-500 transition-all flex items-center gap-2 mx-auto">
-                    View Gallery
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
+                <Link to="/Gallery/lcs-gallery">
+                  <button className="bg-gradient-to-r from-[#0077b6] to-[#00b4d8] text-white font-semibold px-6 py-2 rounded-lg hover:scale-105 transition-transform">
+                    View Gallery →
                   </button>
                 </Link>
               </div>
