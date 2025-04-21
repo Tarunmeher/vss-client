@@ -3,7 +3,6 @@ import axios from 'axios';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
-import logo from "../../../assets/images/logo.png";
 const OnlineForm = () => {
     useEffect(() => {
         AOS.init({ duration: 800, once: true });
@@ -166,7 +165,7 @@ const OnlineForm = () => {
                 {/* Left Side: Form */}
                 <div>
                     <div className="text-center">
-                        <img src={logo} alt="College Logo" className="h-20 mx-auto" />
+                        <img src={''} alt="College Logo" className="h-20 mx-auto" />
                     </div>
                     <h2 className="text-3xl font-bold text-center text-red-800 mb-6" data-aos="fade-down">
                         LAMBODAR HIGHER SECONDARY SCHOOL OF SCIENCE

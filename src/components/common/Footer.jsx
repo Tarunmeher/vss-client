@@ -1,5 +1,5 @@
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
-import logo from "../../assets/images/logo.png"
+
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
 
         {/* College Name & Logo */}
         <div>
-          <img src={logo} alt="College Logo" className="h-12 mb-3" />
+          <img src={''} alt="College Logo" className="h-12 mb-3" />
           <h2 className="text-2xl font-bold">Lambodar Higher Secondary School Of Science</h2>
           <p className="text-gray-400 mt-2">Shaping the future with quality education.</p>
         </div>

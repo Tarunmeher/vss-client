@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import profileImage from '../../../assets/images/bijuu.jpg'
 import {
   FaEnvelope,
   FaBell,

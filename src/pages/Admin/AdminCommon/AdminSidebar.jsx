@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import logo from '../../../assets/images/logo.png'
 import {
   FaTachometerAlt,
   FaUsers,
@@ -58,7 +57,7 @@ const AdminSidebar = () => {
         {/* Logo Section */}
         <div>
           <div className="flex items-center gap-2 px-6 py-6 border-b border-gray-700">
-            <img src={import.meta.env.VITE_SERVICE_URL + '/siteimages/logo.png'}
+            <img src={import.meta.env.VITE_SERVICE_URL + '/siteimages/logo.jpg'}
             style={{filter: "drop-shadow(0 0 1px white) drop-shadow(0 0 1px white) drop-shadow(0 0 5px white)" }}
             alt="Logo" className="w-14 h-14 rounded-full" />
             <h1 className="text-lg font-bold tracking-wider">LCS GROUP OF INSTITUTIONS</h1>

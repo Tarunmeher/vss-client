@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../../assets/images/logo.png";
 
 
 const SummerCourseBanner = ({ isVisible, onClose }) => {
@@ -17,7 +16,7 @@ const SummerCourseBanner = ({ isVisible, onClose }) => {
         <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
             <div className="bg-gradient-to-r from-blue-500 to-green-400 p-4 rounded-xl shadow-2xl w-[320px] text-center relative border-4 border-white">
                 <img
-                    src={logo}
+                    src={''}
                     alt="Summer Course Logo"
                     className="w-14 mx-auto mb-2"
                 />

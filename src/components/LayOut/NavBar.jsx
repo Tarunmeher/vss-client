@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { FaBars } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import SummerCourseBanner from "../Banner/SummerCourseBanner";
-import logo from "../../assets/images/logo.png";
 import '../../assets/css/mobile.css';
 
 const Navbar = () => {
@@ -57,7 +56,7 @@ const Navbar = () => {
     <>
       <nav className="bg-[#014b8f] text-white shadow-md p-1 flex justify-between items-center relative">
         <Link to="/" className="flex items-center">
-          <img src={import.meta.env.VITE_SERVICE_URL + '/siteimages/logo.png'}
+          <img src={import.meta.env.VITE_SERVICE_URL + '/siteimages/logo.jpg'}
             style={{ filter: "drop-shadow(0 0 1px white) drop-shadow(0 0 1px white) drop-shadow(0 0 5px white)" }}
             alt="College Logo" className="h-20" />
         </Link>
