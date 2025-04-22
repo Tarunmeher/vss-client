@@ -9,13 +9,15 @@ const data = [
         description:
             "Become industry ready, Empowered with our Industrial programs. Our wide range of industrial & advanced courses developed with industries and experts provides...",
         bgColor: "bg-gradient-to-r from-blue-400 to-purple-500",
+        shadowColor: "shadow-[6px_6px_0px_#7c3aed]",
     },
     {
         icon: "📈",
         title: "Career Growth",
         description:
-            "Our courses & industry certifications help a student to enhance portfolio for core sector jobs or top university admit. All our courses are associated with internships t...",
+            "Our courses & industry certifications help a student to enhance portfolio for core sector jobs or top university admit. All our courses are associated with internships...",
         bgColor: "bg-gradient-to-r from-green-400 to-teal-500",
+        shadowColor: "shadow-[6px_6px_0px_#0d9488]",
     },
     {
         icon: "₹",
@@ -23,6 +25,7 @@ const data = [
         description:
             "VSS programs are most affordable in market to help everyone pursue their desired course without worrying about cost.",
         bgColor: "bg-gradient-to-r from-yellow-400 to-red-500",
+        shadowColor: "shadow-[6px_6px_0px_#d97706]",
     },
 ];
 
@@ -49,11 +52,11 @@ const WhyChooseUs = () => {
                 </p>
             </div>
 
-            <div className="mt-10 p-8 rounded-xl max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 whycardparent">
+            <div className="mt-10 p-8 rounded-xl max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
                 {data.map((item, index) => (
                     <div
                         key={index}
-                        className={`whycard p-6 rounded-xl shadow-lg drop-shadow-lg text-center cursor-pointer hover:scale-105 duration-500 transition-all text-white ${item.bgColor}`}
+                        className={`whycard p-6 rounded-xl text-center cursor-pointer text-white transition-all duration-200 ease-in-out transform hover:translate-x-1 hover:translate-y-1 ${item.bgColor} ${item.shadowColor}`}
                     >
                         <div className="bg-white p-4 w-16 h-16 mx-auto rounded-lg flex items-center justify-center shadow-md">
                             <span className="text-4xl text-gray-800">{item.icon}</span>

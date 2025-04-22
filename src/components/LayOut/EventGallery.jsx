@@ -49,7 +49,7 @@ export default function EventGallery() {
                 <div className="p-6">
                   <h2 className="text-2xl font-bold text-gray-800 mb-2">{events[currentEvent].title}</h2>
                   <p className="text-gray-600 mb-6">{events[currentEvent].desc}</p>
-                  <Link to="/Gallery/lcs-events">
+                  <Link to="/Gallery/vss-events">
                     <button className="bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:scale-105 transition-transform">
                       View More →
                     </button>
@@ -98,7 +98,7 @@ export default function EventGallery() {
                 ))}
               </div>
               <div className="mt-8 text-center">
-                <Link to="/Gallery/lcs-gallery">
+                <Link to="/Gallery/vss-gallery">
                   <button className="bg-gradient-to-r from-[#0077b6] to-[#00b4d8] text-white font-semibold px-6 py-2 rounded-lg hover:scale-105 transition-transform">
                     View Gallery →
                   </button>
