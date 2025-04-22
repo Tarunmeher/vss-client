@@ -42,17 +42,18 @@ const ManageStaff = () => {
           setStaffData(data.results);
         } else {
           setUploading(false);
+          setStaffData([]);
           toast.error('No Staff Found');
         }
       } else {
         setUploading(false);
-        setStaffData(null);
+        setStaffData([]);
         toast.error(data.message || 'No Staff Found');
       }
     } catch (err) {
       setUploading(false);
       console.error(err);
-      setStaffData(null);
+      setStaffData([]);
       toast.error('Something Went Wrong');
     }
   };
@@ -237,7 +238,7 @@ const ManageStaff = () => {
             </button>
           </div>
           <div className="overflow-x-auto">
-            <div className="p-1">Total : <strong>{filteredStaff.length}</strong></div>
+            <div className="p-1">Total : <strong>{filteredStaff && filteredStaff.length}</strong></div>
             <table className="min-w-full border border-gray-200">
               <thead className="bg-gray-100">
                 <tr>

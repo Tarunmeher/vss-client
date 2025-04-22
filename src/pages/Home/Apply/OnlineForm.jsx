@@ -168,7 +168,7 @@ const OnlineForm = () => {
                         <img src={''} alt="College Logo" className="h-20 mx-auto" />
                     </div>
                     <h2 className="text-3xl font-bold text-center text-red-800 mb-6" data-aos="fade-down">
-                        LAMBODAR HIGHER SECONDARY SCHOOL OF SCIENCE
+                        Vrindavan Smart School
                     </h2>
                     <h3 className="text-2xl font-bold text-center">
                         CHICHAIGUDA KALAHANDI, ODISHA (766014)
