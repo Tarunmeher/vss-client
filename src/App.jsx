@@ -44,9 +44,9 @@ const App = () => {
             <Route path="contact" element={<ContactUs />} />
             <Route path="apply/applysummercourse" element={<SummerCourseApply />} />
             <Route path="apply/ViewStudentDetail" element={<ViewStudentDetail />} />
-            <Route path="Gallery/lcs-gallery" element={<Gallery />} />
-            <Route path="Gallery/lcs-events" element={<Events />} />
-            <Route path="About/about-lcs" element={<AboutUs />} />
+            <Route path="Gallery/vss-gallery" element={<Gallery />} />
+            <Route path="Gallery/vss-events" element={<Events />} />
+            <Route path="About/about-vss" element={<AboutUs />} />
             <Route path="Academics/staff/staf-details" element={<StafDetails />} />
             <Route path="teacher/:id" element={<TeacherInfo />} />
             <Route path="Notification" element={<Notification />} />
@@ -54,19 +54,19 @@ const App = () => {
         )}
 
         {/* LPS Layout */}
-        {isLPSPage && (
+        {/* {isLPSPage && (
           <>
             <Route path="/lps-home" element={<LPSHome />} />
             <Route path="/" element={<LpsLayOut />}>
               <Route path="/lps-about" element={<LpsAbout />} />
             </Route>
           </>
-        )}
+        )} */}
 
         {/* Tillotamma Pages */}
-        {isTillotammaPage && (
+        {/* {isTillotammaPage && (
           <Route path="/tillotamma-home" element={<TillotammaHome />} />
-        )}
+        )} */}
 
         {/* Admin Panel Routes under AdminLayout */}
         <Route path="/admin" element={<AdminLayout />}>

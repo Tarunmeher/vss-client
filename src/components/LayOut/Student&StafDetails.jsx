@@ -17,9 +17,13 @@ const StudentAndStafDetails = () => {
 
     return (
         <>
-            <h2 className="text-3xl font-bold text-black text-center mb-8 mt-4" data-aos="fade-down">
+            <h2
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black text-center mb-8 mt-4"
+                data-aos="fade-down"
+            >
                 Staff & Student Details
             </h2>
+
             <div
                 className="relative bg-cover bg-center py-16 px-4"
                 style={{ backgroundImage: `url('https://cdn.pixabay.com/photo/2017/09/08/00/38/friend-2727307_1280.jpg')` }}
@@ -42,7 +46,7 @@ const StudentAndStafDetails = () => {
                             </div>
                         ))}
                     </div>
-                    <Link to='/About/staf-details'>
+                    <Link to='/Academics/staff/staf-details'>
                         <button
                             className="mt-8 px-6 py-3 bg-yellow-500 text-white font-semibold rounded-full shadow-lg transition duration-300 hover:bg-yellow-600 hover:scale-105"
                             data-aos="fade-up"

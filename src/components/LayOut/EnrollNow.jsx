@@ -1,5 +1,6 @@
 import React from 'react';
 import { GraduationCap } from "lucide-react"; // Use any other icon if you prefer
+import { Link } from 'react-router-dom';
 
 const EnrollSection = () => {
     return (
@@ -21,9 +22,11 @@ const EnrollSection = () => {
             </div>
 
             {/* Contact Us Button */}
-            <button className="border border-white text-white rounded-full px-5 py-1.5 hover:bg-white hover:text-[#002B4E] transition">
-                CONTACT US
-            </button>
+            <Link to='/contact'>
+                <button className="border border-white text-white rounded-full px-5 py-1.5 hover:bg-white hover:text-[#002B4E] transition">
+                    CONTACT US
+                </button>
+            </Link>
         </div>
     );
 };

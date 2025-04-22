@@ -72,7 +72,7 @@ const Navbar = () => {
               HOME
             </Link>
           </li>
-          <Link to='/About/about-lcs'>
+          <Link to='/About/about-vss'>
             <li className="relative group dropdown-container">
               <button
                 onClick={(e) => {
@@ -91,8 +91,8 @@ const Navbar = () => {
             </button>
             {dropdownOpen === 5 && (
               <div className="absolute left-0 mt-2 w-36 bg-[#fff] shadow-lg py-2 text-black z-50 text-sm">
-                <Link to="/Gallery/lcs-gallery" className="block px-3 py-1">VSS Gallery</Link>
-                <Link to="/Gallery/lcs-events" className="block px-3 py-1">VSS Events</Link>
+                <Link to="/Gallery/vss-gallery" className="block px-3 py-1">VSS Gallery</Link>
+                <Link to="/Gallery/vss-events" className="block px-3 py-1">VSS Events</Link>
               </div>
             )}
           </li>
@@ -192,7 +192,7 @@ const Navbar = () => {
                 HOME
               </Link>
             </li>
-            <Link to='/About/about-lcs'>
+            <Link to='/About/about-vss'>
               <li>
                 <button
                   onClick={(e) => {
@@ -211,8 +211,8 @@ const Navbar = () => {
               </button>
               {dropdownOpen === 5 && (
                 <div className="absolute left-0 mt-2 w-36 bg-[#fff] shadow-lg py-2 text-black z-50 text-sm">
-                  <Link to="/Gallery/lcs-gallery" className="block px-3 py-1">VSS Gallery</Link>
-                  <Link to="/Gallery/lcs-events" className="block px-3 py-1">VSS Events</Link>
+                  <Link to="/Gallery/vss-gallery" className="block px-3 py-1">VSS Gallery</Link>
+                  <Link to="/Gallery/vss-events" className="block px-3 py-1">VSS Events</Link>
                 </div>
               )}
             </li>

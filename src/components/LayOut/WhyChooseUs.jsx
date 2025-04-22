@@ -32,15 +32,16 @@ const WhyChooseUs = () => {
     }, []);
 
     return (
-        <section className="w-full p-12">
+        <section className="w-full p-12 bg-gradient-to-br from-[#f0f8ff] to-[#e0f2fe]">
             <div className="max-w-6xl mx-auto text-center">
-                <h2 className="text-3xl font-bold flex items-center justify-center gap-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold flex items-center justify-center gap-2">
                     <span className="relative flex h-5 w-5">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-5 w-5 bg-blue-600"></span>
                     </span>
                     Why <span className="text-blue-600 inline-block" data-aos="fade-up">VSS</span>
                 </h2>
+
                 <p className="mt-2 text-gray-600 text-lg" data-aos="fade-up">
                     Leading E-learning & Skill Development Platform. We are catering in 7
                     countries & have trained over 2 Lakhs students. We offer more than 60

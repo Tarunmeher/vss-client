@@ -27,13 +27,12 @@ export default function EventGallery() {
     <div className="bg-gradient-to-br from-[#f0f8ff] to-[#e0f2fe] py-16 px-4 md:px-10">
       <div className="max-w-7xl mx-auto">
         <h1
-          className="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12 relative pb-4"
+          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center text-gray-800 mb-8 relative pb-4"
           data-aos="fade-down"
         >
           Events & Gallery
           <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-[#0077b6] rounded-full"></span>
         </h1>
-
         <div className="flex flex-col lg:flex-row gap-10">
           {/* Events Section */}
           <div className="w-full lg:w-1/2">
