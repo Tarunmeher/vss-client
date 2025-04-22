@@ -9,13 +9,8 @@ const Footer = () => {
 
         {/* College Name & Logo */}
         <div>
-<<<<<<< HEAD
-          <img src={''} alt="College Logo" className="h-12 mb-3" />
-          <h2 className="text-2xl font-bold">Vrindavan Smart School</h2>
-=======
           <img src={logo} alt="College Logo" className="h-20 mb-3" />
           <h2 className="text-2xl font-bold"> Vrindavan Smart School</h2>
->>>>>>> 27f4b1599f18e3c8db50e95d9b3360be884aa5c6
           <p className="text-gray-400 mt-2">Shaping the future with quality education.</p>
         </div>
 
@@ -24,8 +19,8 @@ const Footer = () => {
           <h3 className="text-xl font-semibold">Quick Links</h3>
           <ul className="mt-2 space-y-2">
             <li><a href="/" className="text-gray-400 hover:text-white">Home</a></li>
-            <li><a href="/About/about-lcs" className="text-gray-400 hover:text-white">About Us</a></li>
-            <li><a href="/Gallery/lcs-gallery" className="text-gray-400 hover:text-white">Gallery</a></li>
+            <li><a href="/About/about-vss" className="text-gray-400 hover:text-white">About Us</a></li>
+            <li><a href="/Gallery/vss-gallery" className="text-gray-400 hover:text-white">Gallery</a></li>
             <li><a href="/Academics" className="text-gray-400 hover:text-white">Academics</a></li>
             <li><a href="/Organisations" className="text-gray-400 hover:text-white">Organisations</a></li>
             <li><a href="/contact" className="text-gray-400 hover:text-white">Contact</a></li>
