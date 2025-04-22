@@ -10,6 +10,7 @@ import '../../assets/css/mobile.css';
 
 const NewsInfoComponent = () => {
     const [newsNotification, setNewsandNotification] = useState(null);
+
     useEffect(() => {
         AOS.init({ duration: 1000 });
 
@@ -57,38 +58,65 @@ const NewsInfoComponent = () => {
 
     return (
         <div className="p-4 mt-10">
-            <h1 className="text-2xl font-bold text-center mb-4" data-aos='fade-down'>News & Notifications</h1>
-            <div className="flex flex-col md:flex-row gap-4 h-[300px] homenewnotificationbox">
+            <h1
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-8"
+                data-aos='fade-down'
+            >
+                News & Notifications
+            </h1>
+
+            <div
+                className="flex flex-col md:flex-row gap-4 h-[300px] homenewnotificationbox"
+                style={{ perspective: '1000px' }}
+            >
                 {/* Left Side - News Slider */}
-                <div className="w-full md:w-1/2 bg-white p-4 shadow-md h-[280px] overflow-hidden" data-aos="fade-right">
+                <div
+                    className="w-full md:w-1/2 bg-white p-4 shadow-lg rounded-2xl h-[280px] overflow-hidden transition-transform duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:rotate-[0.3deg]"
+                    data-aos="fade-right"
+                >
                     <h2 className="text-xl font-bold mb-2">Latest News</h2>
                     <Slider {...sliderSettings}>
-                        {newsNotification && newsNotification.filter((item) => item.type == 'News').map((newsitem, index) => (
-                            <div key={index} className="text-left p-1 text-sm font-semibold">
-                                {index + 1}. {newsitem.notification}
-                            </div>
-                        ))}
+                        {newsNotification &&
+                            newsNotification
+                                .filter((item) => item.type === 'News')
+                                .map((newsitem, index) => (
+                                    <div key={index} className="text-left p-1 text-sm font-semibold">
+                                        {index + 1}. {newsitem.notification}
+                                    </div>
+                                ))}
                     </Slider>
                 </div>
 
                 {/* Right Side - Notification Links */}
-                <div className="w-full md:w-1/2 bg-white p-4 shadow-md h-[280px] overflow-hidden homenewnotificationbox" data-aos="fade-left">
+                <div
+                    className="w-full md:w-1/2 bg-white p-4 shadow-lg rounded-2xl h-[280px] overflow-hidden transition-transform duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:-rotate-[0.3deg]"
+                    data-aos="fade-left"
+                >
                     <h2 className="text-xl font-bold mb-2">Notifications</h2>
                     <div className="relative h-[220px] overflow-hidden">
                         <motion.div
                             className="flex flex-col space-y-2 absolute top-0 left-0 w-full"
-                            animate={{ y: [0, -(newsNotification?newsNotification.length:1) * 40] }}
+                            animate={{ y: [0, -(newsNotification ? newsNotification.length : 1) * 40] }}
                             transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
                         >
-                             {newsNotification && newsNotification.filter((item) => item.type == 'Notification').map((newsitem, index) => (
-                                <div>
-                                    {(index+1)+". "} 
-                                    {newsitem.notification}&nbsp;
-                                    {newsitem.filename && (
-                                        <a style={{color:"blue",textDecoration:"underline"}} href={`${import.meta.env.VITE_SERVICE_URL}/files/${newsitem.filename}`} target="_blank">View File</a>
-                                    )}
-                                </div>
-                            ))}
+                            {newsNotification &&
+                                newsNotification
+                                    .filter((item) => item.type === 'Notification')
+                                    .map((newsitem, index) => (
+                                        <div key={index}>
+                                            {(index + 1) + ". "}
+                                            {newsitem.notification}&nbsp;
+                                            {newsitem.filename && (
+                                                <a
+                                                    style={{ color: "blue", textDecoration: "underline" }}
+                                                    href={`${import.meta.env.VITE_SERVICE_URL}/files/${newsitem.filename}`}
+                                                    target="_blank"
+                                                >
+                                                    View File
+                                                </a>
+                                            )}
+                                        </div>
+                                    ))}
                         </motion.div>
                     </div>
                 </div>

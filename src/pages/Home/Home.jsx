@@ -11,6 +11,7 @@ import AboutUs from '../../components/LayOut/AboutUs'
 import EventGallery from '../../components/LayOut/EventGallery'
 import EventCarousel from '../../components/LayOut/EventCarousel'
 import StudentAndStafDetails from '../../components/LayOut/Student&StafDetails'
+import EnrollNow from '../../components/LayOut/EnrollNow'
 
 const Home = () => {
     const [isBannerVisible, setIsBannerVisible] = useState(false);
@@ -22,13 +23,14 @@ const Home = () => {
     return (
         <>
             <Hero />
+            <EnrollNow />
             {/* <WeHave /> */}
             {/* <FounderLegacy /> */}
             <AboutUs />
             <EventGallery />
             {/* <CourseSlider /> */}
             <NewsAndInformation />
-            <StudentAndStafDetails/>
+            <StudentAndStafDetails />
             <WhyChooseUs />
             {/* <EventCarousel /> */}
             {/* <Visit /> */}

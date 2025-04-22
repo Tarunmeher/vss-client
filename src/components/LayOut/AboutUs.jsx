@@ -5,79 +5,39 @@ import "aos/dist/aos.css";
 
 const About = () => {
     useEffect(() => {
-        AOS.init({
-            duration: 1000, // Animation duration in milliseconds
-            once: true, // Ensures animation runs only once
-            easing: "ease-in-out",
-        });
+        AOS.init({ duration: 1000 });
     }, []);
 
     return (
-        <section className="w-full flex flex-col lg:flex-row items-center justify-between px-8 lg:px-16 py-16 bg-white gap-10">
-            {/* Left Side - Content */}
-            <div className="flex-1 space-y-6 aboutusmobile" data-aos="fade-right">
-                <h4 className="text-orange-500 text-4xl font-bold">ABOUT US</h4>
-                <h2 className="text-4xl font-bold aboutusmobiledesc">
-                    Our Education System <span className="text-orange-500">Inspires</span> You More.
-                </h2>
-                <p className="text-gray-600">
-                    There are many variations of passages available, but the majority have suffered
-                    alteration in some form by injected humour.
+        <div className="relative py-10 md:py-20 px-6 md:px-24 flex flex-col md:flex-row items-center gap-10 bg-transparent">
+            {/* Left Content */}
+            <div className="text-white max-w-xl z-10" data-aos="fade-right">
+                <span className="bg-[#0077b6] text-white font-semibold text-sm px-4 py-1 inline-block mb-4 tracking-wide">
+                    ABOUT CAMPUS
+                </span>
+                <h1 className="text-4xl text-black md:text-5xl font-bold leading-tight mb-4">
+                    Welcome To <span className="text-[#ffb703]">Vrindavan</span> Smart School
+                </h1>
+                <p className="text-lg text-gray-700 border-l-4 border-red-600 pl-4 mb-6">
+                    Our mission is to prepare education leaders and innovators who will change the world by expanding opportunities and outcomes for learners everywhere.
                 </p>
 
-                <div className="space-y-4">
-                    <div className="flex items-start gap-4" data-aos="fade-up">
-                        <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                            📘
-                        </div>
-                        <div>
-                            <h3 className="text-lg font-semibold">Education Services</h3>
-                            <p className="text-gray-500">It is a long-established fact that a reader will be using content.</p>
-                        </div>
-                    </div>
-                    <div className="flex items-start gap-4" data-aos="fade-up" data-aos-delay="200">
-                        <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                            🌍
-                        </div>
-                        <div>
-                            <h3 className="text-lg font-semibold">International Hubs</h3>
-                            <p className="text-gray-500">It is a long-established fact that a reader will be using content.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="flex items-center gap-8 mt-6" data-aos="zoom-in">
-                    <Link to='/'>
-                        <button className="bg-orange-500 text-white px-4 py-2 rounded-lg font-semibold shadow-md hover:bg-orange-600">
-                            View More →
-                        </button>
-                    </Link>
-                </div>
+                <Link to='/About/about-vss'>
+                    <button className="bg-gradient-to-br from-[#ffb703] to-[#ff9900] text-black font-semibold px-6 py-2 rounded-lg shadow-[4px_4px_0px_#d97706] hover:translate-x-1 hover:translate-y-1 transition-all duration-200">
+                        View More
+                    </button>
+                </Link>
             </div>
 
-            {/* Right Side - Images */}
-            <div className="hidden sm:hidden lg:flex flex-1 flex-col gap-6 items-center" data-aos="fade-left">
+            {/* Right Image */}
+            <div className="flex-1 w-full md:block" data-aos="fade-left">
                 <img
-                    src="https://cdn.pixabay.com/photo/2022/05/29/16/54/breakfast-7229532_1280.jpg"
-                    alt="Students Learning"
-                    className="w-3/4 h-80 rounded-lg shadow-lg"
+                    src="https://cdn.pixabay.com/photo/2025/04/14/18/05/mountain-9533968_1280.jpg"
+                    alt="Campus"
+                    className="w-full h-auto object-contain rounded-md"
                 />
-                <div className="flex gap-4 w-3/4">
-                    <img
-                        src="https://cdn.pixabay.com/photo/2022/05/29/16/54/breakfast-7229532_1280.jpg"
-                        alt="Students Discussing"
-                        className="w-1/2 h-40 rounded-lg shadow-lg"
-                        data-aos="flip-left"
-                    />
-                    <img
-                        src="https://cdn.pixabay.com/photo/2022/05/29/16/54/breakfast-7229532_1280.jpg"
-                        alt="Student Studying"
-                        className="w-1/2 h-40 rounded-lg shadow-lg"
-                        data-aos="flip-right"
-                    />
-                </div>
             </div>
-        </section>
+        </div>
     );
 };
 

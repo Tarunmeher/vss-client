@@ -3,6 +3,7 @@ import { FaBars } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import SummerCourseBanner from "../Banner/SummerCourseBanner";
 import '../../assets/css/mobile.css';
+import logo from '../../assets/images/logoo.jpg'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,13 +15,11 @@ const Navbar = () => {
   const buttonRef = useRef(null);
   const desktopNavRef = useRef(null);
 
-  // Close mobile menu & dropdowns on route change
   useEffect(() => {
     setIsOpen(false);
     setDropdownOpen(null);
   }, [location]);
 
-  // Close on outside click (Mobile & Desktop)
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -31,8 +30,6 @@ const Navbar = () => {
       ) {
         setIsOpen(false);
       }
-
-      // Close dropdowns if clicked outside (Only for desktop)
       if (
         desktopNavRef.current &&
         !desktopNavRef.current.contains(event.target)
@@ -47,18 +44,22 @@ const Navbar = () => {
     };
   }, []);
 
-  // Dropdown toggle function
   const toggleDropdown = (index) => {
     setDropdownOpen(dropdownOpen === index ? null : index);
   };
 
   return (
     <>
-      <nav className="bg-[#014b8f] text-white shadow-md p-1 flex justify-between items-center relative">
+      <nav className="absolute top-0 left-0 w-full z-50 text-white p-1 flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <img src={import.meta.env.VITE_SERVICE_URL + '/siteimages/logo.jpg'}
-            style={{ filter: "drop-shadow(0 0 1px white) drop-shadow(0 0 1px white) drop-shadow(0 0 5px white)" }}
-            alt="College Logo" className="h-20" />
+          <img
+            src={logo}
+            style={{
+              filter: "drop-shadow(0 0 1px white) drop-shadow(0 0 1px white) drop-shadow(0 0 5px white)"
+            }}
+            alt="College Logo"
+            className="h-20"
+          />
         </Link>
 
         {/* Desktop Menu */}
@@ -71,7 +72,7 @@ const Navbar = () => {
               HOME
             </Link>
           </li>
-          <Link to='/About/about-lcs'>
+          <Link to='/About/about-vss'>
             <li className="relative group dropdown-container">
               <button
                 onClick={(e) => {
@@ -82,12 +83,6 @@ const Navbar = () => {
               >
                 ABOUT
               </button>
-              {/* {dropdownOpen === 0 && (
-              <div className="absolute left-0 mt-2 w-36 bg-sky-900 shadow-lg py-2 rounded-md z-50 text-sm">
-                <Link to="/About/about-lcs" className="block px-3 py-1">About LCS</Link>
-                <Link to="/About/staf-details" className="block px-3 py-1">Staf Details</Link>
-              </div>
-            )} */}
             </li>
           </Link>
           <li className="relative group dropdown-container">
@@ -95,9 +90,9 @@ const Navbar = () => {
               GALLERY ▾
             </button>
             {dropdownOpen === 5 && (
-              <div className="absolute left-0 mt-2 w-36 bg-sky-900 shadow-lg py-2 rounded-md z-50 text-sm">
-                <Link to="/Gallery/lcs-gallery" className="block px-3 py-1">LCS Gallery</Link>
-                <Link to="/Gallery/lcs-events" className="block px-3 py-1">LCS Events</Link>
+              <div className="absolute left-0 mt-2 w-36 bg-[#fff] shadow-lg py-2 text-black z-50 text-sm">
+                <Link to="/Gallery/vss-gallery" className="block px-3 py-1">VSS Gallery</Link>
+                <Link to="/Gallery/vss-events" className="block px-3 py-1">VSS Events</Link>
               </div>
             )}
           </li>
@@ -112,7 +107,7 @@ const Navbar = () => {
               ACADEMICS ▾
             </button>
             {dropdownOpen === 3 && (
-              <div className="absolute left-0 mt-2 w-48 bg-sky-900 shadow-lg py-2 rounded-md z-50 text-sm">
+              <div className="absolute left-0 mt-2 w-48 bg-[#fff] shadow-lg py-2 text-black z-50 text-sm">
                 <Link to="/programmes" className="block px-3 py-1">
                   Programmes
                 </Link>
@@ -128,8 +123,7 @@ const Navbar = () => {
               </div>
             )}
           </li>
-
-          <li className="relative group dropdown-container">
+          {/* <li className="relative group dropdown-container">
             <button
               onClick={(e) => {
                 e.stopPropagation();
@@ -140,7 +134,7 @@ const Navbar = () => {
               ORGANISATIONS ▾
             </button>
             {dropdownOpen === 4 && (
-              <div className="absolute left-0 mt-2 w-36 bg-sky-900 shadow-lg py-2 rounded-md z-50 text-sm">
+              <div className="absolute left-0 mt-2 w-36 bg-[#fff] shadow-lg py-2 text-black z-50 text-sm">
                 <a
                   href="/lps-home"
                   onClick={(e) => {
@@ -163,28 +157,17 @@ const Navbar = () => {
                 </a>
               </div>
             )}
-          </li>
-
-
+          </li> */}
           <Link to='/contact' className="relative group dropdown-container">
             <button className="text-white focus:outline-none text-sm">
               CONTACT
             </button>
           </Link>
-
-          {/* Added Login Button */}
           <Link to="/admin/login">
             <button className="bg-white text-[#014b8f] px-3 py-1 rounded-sm text-sm font-medium mr-2 hover:bg-gray-200">
               Login
             </button>
           </Link>
-
-          {/* <button
-            onClick={() => setIsBannerVisible(true)}
-            className="bg-orange-500 text-black px-3 py-1 rounded-sm text-sm font-medium"
-          >
-            Apply
-          </button> */}
         </ul>
 
         {/* Mobile Menu Button */}
@@ -202,18 +185,14 @@ const Navbar = () => {
           <ul
             id="menulist"
             ref={menuRef}
-            className="absolute top-14 left-0 w-full bg-sky-900 shadow-md md:hidden flex flex-col space-y-2 p-4 text-sm font-medium z-50"
+            className="absolute top-14 left-0 w-full bg-gray-900 shadow-md md:hidden flex flex-col space-y-2 p-4 text-sm font-medium z-50"
           >
             <li>
-              <Link
-                to="/"
-                className="block px-4 py-2 text-white hover:bg-gray-700"
-                onClick={() => setIsOpen(false)}
-              >
+              <Link to="/" className="block px-4 py-2 text-white hover:bg-gray-700" onClick={() => setIsOpen(false)}>
                 HOME
               </Link>
             </li>
-            <Link to='/About/about-lcs'>
+            <Link to='/About/about-vss'>
               <li>
                 <button
                   onClick={(e) => {
@@ -224,12 +203,6 @@ const Navbar = () => {
                 >
                   ABOUT
                 </button>
-                {/* {dropdownOpen === 0 && (
-                <div className="absolute left-4 mt-2 w-36 bg-sky-900 shadow-lg py-2 rounded-md z-50 text-sm">
-                  <Link to="/About/about-lcs" className="block px-3 py-1">About LCS</Link>
-                  <Link to="/About/staf-details" className="block px-3 py-1">Staf Details</Link>
-                </div>
-              )} */}
               </li>
             </Link>
             <li className="relative group dropdown-container gallerycont">
@@ -237,9 +210,9 @@ const Navbar = () => {
                 GALLERY ▾
               </button>
               {dropdownOpen === 5 && (
-                <div className="absolute left-0 mt-2 w-36 bg-sky-900 shadow-lg py-2 rounded-md z-50 text-sm">
-                  <Link to="/Gallery/lcs-gallery" className="block px-3 py-1">LCS Gallery</Link>
-                  <Link to="/Gallery/lcs-events" className="block px-3 py-1">LCS Events</Link>
+                <div className="absolute left-0 mt-2 w-36 bg-[#fff] shadow-lg py-2 text-black z-50 text-sm">
+                  <Link to="/Gallery/vss-gallery" className="block px-3 py-1">VSS Gallery</Link>
+                  <Link to="/Gallery/vss-events" className="block px-3 py-1">VSS Events</Link>
                 </div>
               )}
             </li>
@@ -254,24 +227,15 @@ const Navbar = () => {
                 ACADEMICS ▾
               </button>
               {dropdownOpen === 3 && (
-                <div className="absolute left-4 mt-2 w-36 bg-sky-900 shadow-lg py-2 rounded-md z-50 text-sm">
-                  <Link to="/programmes" className="block px-3 py-1">
-                    Programmes
-                  </Link>
-                  <Link to="/examination" className="block px-3 py-1">
-                    Examination
-                  </Link>
-                  <Link to="/Academics/staff/staf-details" className="block px-3 py-1">
-                    Staff
-                  </Link>
-                  <Link to="/notification" className="block px-3 py-1">
-                    Notification
-                  </Link>
+                <div className="absolute left-4 mt-2 w-36 bg-[#fff] shadow-lg py-2 text-black z-50 text-sm">
+                  <Link to="/programmes" className="block px-3 py-1">Programmes</Link>
+                  <Link to="/examination" className="block px-3 py-1">Examination</Link>
+                  <Link to="/Academics/staff/staf-details" className="block px-3 py-1">Staff</Link>
+                  <Link to="/notification" className="block px-3 py-1">Notification</Link>
                 </div>
               )}
             </li>
-
-            <li>
+            {/* <li>
               <button
                 onClick={(e) => {
                   e.stopPropagation();
@@ -282,36 +246,23 @@ const Navbar = () => {
                 ORGANISATIONS ▾
               </button>
               {dropdownOpen === 4 && (
-                <div className="absolute left-4 mt-2 w-36 bg-sky-900 shadow-lg py-2 rounded-md z-50 text-sm">
+                <div className="absolute left-4 mt-2 w-36 bg-[#fff] shadow-lg py-2 text-black z-50 text-sm">
                   <a href="/lps-home" className="block px-3 py-1">LPS</a>
                   <a href="/tillotamma-home" className="block px-3 py-1">Tillotamma</a>
                 </div>
               )}
-            </li>
-
-            {/* Contact link (without dropdown) */}
+            </li> */}
             <li>
-              <Link
-                to="/contact"
-                className="block px-4 py-2 text-white hover:bg-gray-700"
-                onClick={() => setIsOpen(false)}
-              >
+              <Link to="/contact" className="block px-4 py-2 text-white hover:bg-gray-700" onClick={() => setIsOpen(false)}>
                 CONTACT
               </Link>
             </li>
-
             <div className="flex space-x-2 mt-2">
               <Link to="/admin/login">
-                <button className="bg-white text-[#014b8f] px-3 py-1 rounded-md text-sm font-medium hover:bg-gray-200">
+                <button className="bg-white text-[#014b8f] px-3 py-1  text-sm font-medium hover:bg-gray-200">
                   Login
                 </button>
               </Link>
-              {/* <button
-                onClick={() => setIsBannerVisible(true)}
-                className="bg-orange-500 hover:bg-yellow-600 text-black px-3 py-1 rounded-md text-sm font-medium"
-              >
-                Apply
-              </button> */}
             </div>
           </ul>
         )}
