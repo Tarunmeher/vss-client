@@ -78,7 +78,7 @@ const Contact = () => {
                 <div className="w-full md:w-1/2">
                     <iframe
                         className="w-full h-80"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.682295679829!2d82.8783612733937!3d19.85339132711175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a24e1ad95c15dd7%3A0x8e1b657ca47f7ab3!2sLAMBODAR%20COLLEGE%20OF%20SCIENCE!5e0!3m2!1sen!2sin!4v1742709016222!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.423137399964!2d83.13726557339545!3d19.90656612537754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a24e910e35fca97%3A0xf26d5b1d596f3e72!2sVRINDAVAN%20SMART%20SCHOOL!5e0!3m2!1sen!2sin!4v1745286252200!5m2!1sen!2sin"
                         allowFullScreen=""
                         loading="lazy"
                         title="Lambodar College Map"
