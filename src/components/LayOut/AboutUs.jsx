@@ -32,7 +32,7 @@ const About = () => {
             {/* Right Image */}
             <div className="flex-1 w-full md:block" data-aos="fade-left">
                 <img
-                    src="https://cdn.pixabay.com/photo/2025/04/14/18/05/mountain-9533968_1280.jpg"
+                    src={import.meta.env.VITE_SERVICE_URL + '/siteimages/entrance2.jpg'}
                     alt="Campus"
                     className="w-full h-auto object-contain rounded-md"
                 />

@@ -9,13 +9,8 @@ const Footer = () => {
 
         {/* College Name & Logo */}
         <div>
-<<<<<<< HEAD
-          <img src={''} alt="College Logo" className="h-12 mb-3" />
-          <h2 className="text-2xl font-bold">Vrindavan Smart School</h2>
-=======
           <img src={logo} alt="College Logo" className="h-20 mb-3" />
           <h2 className="text-2xl font-bold"> Vrindavan Smart School</h2>
->>>>>>> 27f4b1599f18e3c8db50e95d9b3360be884aa5c6
           <p className="text-gray-400 mt-2">Shaping the future with quality education.</p>
         </div>
 
@@ -35,9 +30,9 @@ const Footer = () => {
         {/* Contact & Social Links */}
         <div>
           <h3 className="text-xl font-semibold">Contact</h3>
-          <p className="text-gray-400 mt-2">Chichaiguda, Kalahandi, Orissa, Odisha 766014</p>
-          <p className="text-gray-400">Email: lcskalahandi@gmail.com</p>
-          <p className="text-gray-400">Phone: +91 9583587565<br></br> +91 8249727709<br></br>+91 7854991773<br></br>+91 9337409176</p>
+          <p className="text-gray-400 mt-2">Mangala mandir Gali, Near Satsang vihar, Sambhunagar Pada, Bhawanipatna, Odisha 766002</p>
+          <p className="text-gray-400">Email: vrindavansmartschool@gmail.com</p>
+          <p className="text-gray-400">Phone: +91 95564 48444</p>
 
           {/* Social Icons */}
           <div className="flex space-x-4 mt-4">

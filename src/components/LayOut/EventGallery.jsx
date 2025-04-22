@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 const galleryImages = [
   import.meta.env.VITE_SERVICE_URL + '/siteimages/class4.jpg',
-  import.meta.env.VITE_SERVICE_URL + '/siteimages/office.jpg',
-  import.meta.env.VITE_SERVICE_URL + '/siteimages/boyshostel.jpg',
-  import.meta.env.VITE_SERVICE_URL + '/siteimages/class2.jpg',
+  import.meta.env.VITE_SERVICE_URL + '/siteimages/skill.jpg',
+  import.meta.env.VITE_SERVICE_URL + '/siteimages/explore.jpg',
+  import.meta.env.VITE_SERVICE_URL + '/siteimages/achive.jpg',
 ];
 
 export default function EventGallery() {
