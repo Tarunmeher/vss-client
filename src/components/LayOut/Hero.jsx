@@ -139,7 +139,7 @@ const Hero = () => {
       </button> */}
 
       {/* Social Icons */}
-      <div className="hidden lg:flex fixed flex-col top-[40%] left-0 z-20">
+      {/* <div className="hidden lg:flex fixed flex-col top-[40%] left-0 z-20">
         <ul>
           {socialLinks.map((link, index) => (
             <li
@@ -157,7 +157,7 @@ const Hero = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };
