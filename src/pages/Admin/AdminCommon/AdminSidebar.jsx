@@ -60,7 +60,7 @@ const AdminSidebar = () => {
             <img src={import.meta.env.VITE_SERVICE_URL + '/siteimages/logo.jpg'}
             style={{filter: "drop-shadow(0 0 1px white) drop-shadow(0 0 1px white) drop-shadow(0 0 5px white)" }}
             alt="Logo" className="w-14 h-14 rounded-full" />
-            <h1 className="text-lg font-bold tracking-wider">LCS GROUP OF INSTITUTIONS</h1>
+            <h1 className="text-lg font-bold tracking-wider">VRINDAVAN SMART SCHOOL</h1>
           </div>
 
           {/* Menu Items */}

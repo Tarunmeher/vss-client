@@ -9,7 +9,7 @@ const Footer = () => {
         {/* College Name & Logo */}
         <div>
           <img src={''} alt="College Logo" className="h-12 mb-3" />
-          <h2 className="text-2xl font-bold">Lambodar Higher Secondary School Of Science</h2>
+          <h2 className="text-2xl font-bold">Vrindavan Smart School</h2>
           <p className="text-gray-400 mt-2">Shaping the future with quality education.</p>
         </div>
 

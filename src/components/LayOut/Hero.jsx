@@ -15,24 +15,24 @@ import { Typewriter } from "react-simple-typewriter";
 
 const slides = [
   {
-    title: "Lambodar Higher Secondary School of Science",
+    title: "Vrindavan Smart School",
     description: "Innovative e-learning solutions for the next generation of students.",
     image: import.meta.env.VITE_SERVICE_URL + '/siteimages/collegebnr.jpg',
     // link: "/tillotamma-home",
   },
   {
-    title: "Lambodar Higher Secondary School of Science",
+    title: "Vrindavan Smart School",
     description: "Shaping the future with quality education.",
     image: import.meta.env.VITE_SERVICE_URL + '/siteimages/class4.jpg',
     // link: "/tillotamma-home",
   },
   {
-    title: "Lambodar Higher Secondary School of Science",
+    title: "Vrindavan Smart School",
     description: "Shaping the future with quality education.",
     image: import.meta.env.VITE_SERVICE_URL + '/siteimages/entrance.jpg',
   },
   {
-    title: "Lambodar Higher Secondary School of Science",
+    title: "Vrindavan Smart School",
     description: "Shaping the future with quality education.",
     image: import.meta.env.VITE_SERVICE_URL + '/siteimages/class6.jpg',
     // link: "/lps-home",
