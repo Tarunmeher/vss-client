@@ -16,60 +16,53 @@ const Contact = () => {
                         <div className="flex items-start">
                             <span className="text-blue-500 text-lg mr-2">📍</span>
                             <p>
-                                Lambodar Higher Secondary College Of Science (LCS)<br />
-                                Kalahandi University <br />
+                                Vrindavan Smart School (VSS)<br />
+                                Bhawanipatna <br />
                                 <a
                                     href="https://maps.google.com?q=Patia,Bhubaneswar,Odisha,India"
                                     className="text-blue-500 hover:underline"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    Chichaiguda, Kalahandi, Odisha, India
+                                    Mangala mandir Gali, Near Satsang vihar, Sambhunagar Pada, Bhawanipatna, Odisha, India
                                 </a>
                                 <br />
-                                Pin: 766014
+                                Pin: 766002
                             </p>
                         </div>
                         <div className="flex items-center">
                             <span className="text-blue-500 text-lg mr-2">📧</span>
                             <p>
                                 <a
-                                    href="mailto:kiit@kiit.ac.in"
+                                    href="mailto:vrindavansmartschool@gmail.com"
                                     className="text-blue-500 hover:underline"
                                 >
-                                    LCS@LCS.ac.in
-                                </a>
-                                <br />
-                                <a
-                                    href="mailto:admission@kiit.ac.in"
-                                    className="text-blue-500 hover:underline"
-                                >
-                                    admission@LCS.ac.in
+                                    vrindavansmartschool@gmail.com
                                 </a>
                             </p>
                         </div>
                         <div className="flex items-center">
                             <span className="text-blue-500 text-lg mr-2">📞</span>
-                            <p>+91 674 2725113</p>
+                            <p>+91 95564 48444</p>
                         </div>
                         <div className="flex items-center">
                             <span className="text-blue-500 text-lg mr-2">📞</span>
                             <p>
                                 Admission Contact:
-                                <a href="tel:8080785785" className="text-blue-500 hover:underline">
-                                    8080 785 785
+                                <a href="tel:9556448444" className="text-blue-500 hover:underline">
+                                    +91 95564 48444
                                 </a>
                             </p>
                         </div>
                         <div className="flex items-center">
                             <span className="text-blue-500 text-lg mr-2">🌐</span>
                             <a
-                                href="https://kiit.ac.in"
+                                href="https://vrindavansmartschool.in"
                                 className="text-blue-500 hover:underline"
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                LCS.ac.in
+                                www.vrindavansmartschool.in
                             </a>
                         </div>
                     </div>

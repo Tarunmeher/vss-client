@@ -17,28 +17,28 @@ const slides = [
   {
     title: "Vrindavan Smart School",
     description: "Innovative e-learning solutions for the next generation of students.",
-    // image: import.meta.env.VITE_SERVICE_URL + '/siteimages/collegebnr.jpg',
-    image: "https://cdn.pixabay.com/photo/2020/12/15/13/54/children-5833719_1280.jpg"
+    image: import.meta.env.VITE_SERVICE_URL + '/siteimages/collegebnr.jpg',
+    // image: "https://cdn.pixabay.com/photo/2020/12/15/13/54/children-5833719_1280.jpg"
     // link: "/tillotamma-home",
   },
   {
     title: "Vrindavan Smart School",
     description: "Shaping the future with quality education.",
-    // image: import.meta.env.VITE_SERVICE_URL + '/siteimages/class4.jpg',
-    image: "https://cdn.pixabay.com/photo/2017/10/01/14/14/street-2805643_1280.jpg"
+    image: import.meta.env.VITE_SERVICE_URL + '/siteimages/class4.jpg',
+    // image: "https://cdn.pixabay.com/photo/2017/10/01/14/14/street-2805643_1280.jpg"
     // link: "/tillotamma-home",
   },
   {
     title: "Vrindavan Smart School",
     description: "Shaping the future with quality education.",
-    // image: import.meta.env.VITE_SERVICE_URL + '/siteimages/entrance.jpg',
-    image: "https://cdn.pixabay.com/photo/2023/08/31/15/37/ai-generated-8225400_1280.png"
+    image: import.meta.env.VITE_SERVICE_URL + '/siteimages/entrance.jpg',
+    // image: "https://cdn.pixabay.com/photo/2023/08/31/15/37/ai-generated-8225400_1280.png"
   },
   {
     title: "Vrindavan Smart School",
     description: "Shaping the future with quality education.",
-    // image: import.meta.env.VITE_SERVICE_URL + '/siteimages/class6.jpg',
-    image: "https://cdn.pixabay.com/photo/2024/05/11/06/39/back-to-school-8754080_1280.jpg"
+    image: import.meta.env.VITE_SERVICE_URL + '/siteimages/class6.jpg',
+    // image: "https://cdn.pixabay.com/photo/2024/05/11/06/39/back-to-school-8754080_1280.jpg"
     // link: "/lps-home",
   },
 ];
@@ -139,7 +139,7 @@ const Hero = () => {
       </button> */}
 
       {/* Social Icons */}
-      <div className="hidden lg:flex fixed flex-col top-[40%] left-0 z-20">
+      {/* <div className="hidden lg:flex fixed flex-col top-[40%] left-0 z-20">
         <ul>
           {socialLinks.map((link, index) => (
             <li
@@ -157,7 +157,7 @@ const Hero = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 };
