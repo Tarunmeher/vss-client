@@ -3,8 +3,6 @@ import { Route, Routes, useLocation } from "react-router-dom";
 
 import LayOut from "./components/LayOut/LayOut";
 import Home from "./pages/Home/Home";
-import LPSHome from "./pages/LPS/LPSHome";
-import TillotammaHome from "./pages/Tillotamma/TillotammaHome";
 import SummerCourseApply from "./pages/Home/Apply/SummerCourseApply";
 import ViewStudentDetail from "./pages/Home/Apply/ViewStudentDetail";
 import ContactUs from "./pages/contact/ContactUs";
@@ -14,8 +12,6 @@ import TeacherInfo from "./pages/About/TeacherInformation/TeacherInfo";
 import StafDetails from "./pages/Home/StafDetails/StafDetails";
 import Events from "./pages/Home/Gallery/Events";
 import Notification from "./pages/Home/Notifications/Notification";
-import LpsAbout from "./pages/LPS/LPSlayout/About";
-import LpsLayOut from "./pages/LPS/LPSlayout/LpsLayOut";
 import AdminLayout from "./pages/Admin/AdminLayOut/AdminLayOut";
 import AdminDashBoard from "./pages/Admin/AdminDashboard/AdminDashBoard";
 import ManageProfile from "./pages/Admin/ManageProfile/ManageProfile";
@@ -26,6 +22,7 @@ import ManageGallery from "./pages/Admin/ManageGallery/ManageGallery";
 import Login from "./pages/Admin/AdminLogin/Auth/Login";
 import Help from "./pages/Admin/Help/Help";
 import MyProfile from "./pages/Admin/MyProfile/MyProfile";
+import Admission from "./pages/Admission/Admission";
 
 const App = () => {
   const location = useLocation();
@@ -42,6 +39,7 @@ const App = () => {
           <Route path="/" element={<LayOut />}>
             <Route index element={<Home />} />
             <Route path="contact" element={<ContactUs />} />
+            <Route path="admission" element={<Admission />} />
             <Route path="apply/applysummercourse" element={<SummerCourseApply />} />
             <Route path="apply/ViewStudentDetail" element={<ViewStudentDetail />} />
             <Route path="Gallery/vss-gallery" element={<Gallery />} />

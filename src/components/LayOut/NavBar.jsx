@@ -158,6 +158,11 @@ const Navbar = () => {
               </div>
             )}
           </li> */}
+          <Link to='/admission' className="relative group dropdown-container">
+            <button className="text-white focus:outline-none text-sm">
+              ADMISSION
+            </button>
+          </Link>
           <Link to='/contact' className="relative group dropdown-container">
             <button className="text-white focus:outline-none text-sm">
               CONTACT
@@ -252,6 +257,11 @@ const Navbar = () => {
                 </div>
               )}
             </li> */}
+            <Link to='/admission' className="relative group dropdown-container">
+              <button className="text-white focus:outline-none text-sm">
+                ADMISSION
+              </button>
+            </Link>
             <li>
               <Link to="/contact" className="block px-4 py-2 text-white hover:bg-gray-700" onClick={() => setIsOpen(false)}>
                 CONTACT
