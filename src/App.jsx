@@ -23,6 +23,7 @@ import Login from "./pages/Admin/AdminLogin/Auth/Login";
 import Help from "./pages/Admin/Help/Help";
 import MyProfile from "./pages/Admin/MyProfile/MyProfile";
 import Admission from "./pages/Admission/Admission";
+import AdmissionInquiry from "./pages/Admin/AdmissionEnquiry/AdmissionEnquiry";
 
 const App = () => {
   const location = useLocation();
@@ -74,6 +75,7 @@ const App = () => {
           <Route path="/admin/events" element={<ManageEvent />} />
           <Route path="/admin/notifications" element={<ManageNewsAndNotification />} />
           <Route path="/admin/gallery" element={<ManageGallery />} />
+          <Route path="/admin/Enquiry" element={<AdmissionInquiry />} />
           <Route path="/admin/help" element={<Help />} />
           <Route path="/admin/my-profile" element={<MyProfile />} />
         </Route>
