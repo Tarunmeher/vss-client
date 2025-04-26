@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Search, Plus, Edit, Trash2, Phone, Calendar, BookOpen, Package } from 'lucide-react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import InquiryModal from './InguiryModal';
+import InquiryModal from './InquiryModal';
 
 const AdmissionInquiry = () => {
     // Sample inquiry data
