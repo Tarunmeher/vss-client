@@ -1,21 +1,67 @@
 import React, { useState } from "react";
-
+import { toast, ToastContainer } from 'react-toastify';
+import Loader from "../../components/common/loader";
 export default function AdmissionForm() {
+  const [uploading, setUploading] = useState(false);
   const [formData, setFormData] = useState({
     childName: "",
     mobileNo: "",
-    branch: "",
     standard: "",
+    package: "",
   });
 
   const handleChange = (e) => {
+    const regex = /^[A-Za-z]+$/;
+    if (e.target.name == 'mobileNo') {
+      if (regex.test(e.target.value)) {
+        let newValue = e.target.value;
+        e.target.value = newValue.pop(newValue.length - 1);
+      }
+    }
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log("Form Submitted", formData);
-    alert("Thank you for your submission!");
+    try {
+      const currentUrl = window.location.href;
+      let url = import.meta.env.VITE_SERVICE_URL;
+      if (currentUrl.includes('https')) {
+        url = url.replace('http', 'https')
+      }
+      setUploading(true);
+      const res = await fetch(`${url}/createEnqury`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          std_name: formData.childName,
+          mobile: formData.mobileNo,
+          standard: formData.standard,
+          package: formData.package
+        })
+      });
+
+      const data = await res.json();
+      console.log(data)
+      if (data.status=='success') {
+        setUploading(false);
+        toast.success(data.message);
+        setFormData({
+          childName: "",
+          mobileNo: "",
+          standard: "",
+          package: "",
+        })
+      } else {
+        setUploading(false);
+        toast.error(data.message);
+        // setIsModalOpen(false);
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error('Something went wrong');
+      setUploading(false);
+    }
   };
 
   return (
@@ -56,29 +102,14 @@ export default function AdmissionForm() {
             <div>
               <label className="block text-sm font-medium text-gray-700">Mobile No.</label>
               <input
-                type="tel"
+                type="text"
                 name="mobileNo"
                 value={formData.mobileNo}
                 onChange={handleChange}
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300"
                 required
+                maxLength={10}
               />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700">Select Branch</label>
-              <select
-                name="branch"
-                value={formData.branch}
-                onChange={handleChange}
-                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300"
-                required
-              >
-                <option value="">-- Select Branch --</option>
-                <option value="Branch A">Branch A</option>
-                <option value="Branch B">Branch B</option>
-                <option value="Branch C">Branch C</option>
-              </select>
             </div>
 
             <div>
@@ -91,25 +122,48 @@ export default function AdmissionForm() {
                 required
               >
                 <option value="">-- Select Standard --</option>
+                <option value="Pre-Nursery">Pre-Nursery</option>
                 <option value="Nursery">Nursery</option>
                 <option value="LKG">LKG</option>
                 <option value="UKG">UKG</option>
-                <option value="1st">1st</option>
-                <option value="2nd">2nd</option>
-                <option value="3rd">3rd</option>
-                <option value="4th">4th</option>
+                <option value="1">1st Class</option>
+                <option value="2">2nd Class</option>
+                <option value="3">3rd Class</option>
+                <option value="4">4th Class</option>
+                <option value="5">5th Class</option>
+                <option value="6">6th Class</option>
               </select>
             </div>
-
+            <div>
+              <label className="block text-sm font-medium text-gray-700">Select Package</label>
+              <select
+                name="package"
+                value={formData.package}
+                onChange={handleChange}
+                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+                required
+              >
+                <option value="">-- Select Package --</option>
+                <option value="Hostel">Hostel</option>
+                <option value="Day Boarding">Day Boarding</option>
+                <option value="Day Scholar">Day Scholar</option>
+              </select>
+            </div>
             <button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md text-lg font-semibold"
+              className="w-full bg-green-600 hover:bg-blue-700 text-white py-2 rounded-md text-lg font-semibold"
             >
-              Apply Now
+              Submit
             </button>
           </form>
         </div>
       </div>
+      {/* ToastContainer added here */}
+      <ToastContainer position="top-right" autoClose={3000} />
+
+      {uploading && (
+        <Loader></Loader>
+      )}
     </>
   );
 }

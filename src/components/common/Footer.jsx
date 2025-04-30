@@ -30,7 +30,7 @@ const Footer = () => {
         {/* Contact & Social Links */}
         <div>
           <h3 className="text-xl font-semibold">Contact</h3>
-          <p className="text-gray-400 mt-2">Mangala mandir Gali, Near Satsang vihar, Sambhunagar Pada, Bhawanipatna, Odisha 766002</p>
+          <p className="text-gray-400 mt-2">Mangala mandir Gali, Near Satsang vihar, Bhawanipatna, Odisha 766002</p>
           <p className="text-gray-400">Email: vrindavansmartschool@gmail.com</p>
           <p className="text-gray-400">Phone: +91 95564 48444</p>
 

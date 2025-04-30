@@ -7,7 +7,7 @@ const data = [
         icon: "❓",
         title: "Why Choose Us",
         description:
-            "Become industry ready, Empowered with our Industrial programs. Our wide range of industrial & advanced courses developed with industries and experts provides...",
+            "Impact holistic education for higher academic and social standard. We strive for continue improvement in our quality management system by systematically applying the principle of quality assurance",
         bgColor: "bg-gradient-to-r from-blue-400 to-purple-500",
         shadowColor: "shadow-[6px_6px_0px_#7c3aed]",
     },
@@ -15,7 +15,7 @@ const data = [
         icon: "📈",
         title: "Career Growth",
         description:
-            "Our courses & industry certifications help a student to enhance portfolio for core sector jobs or top university admit. All our courses are associated with internships...",
+            "Provide conducive learning environment and oppertunities for all round development.",
         bgColor: "bg-gradient-to-r from-green-400 to-teal-500",
         shadowColor: "shadow-[6px_6px_0px_#0d9488]",
     },
@@ -23,7 +23,7 @@ const data = [
         icon: "₹",
         title: "Most Affordable in India",
         description:
-            "VSS programs are most affordable in market to help everyone pursue their desired course without worrying about cost.",
+            "Vrindavan programs are most affordable in market to help everyone pursue their desired course without worrying about cost.",
         bgColor: "bg-gradient-to-r from-yellow-400 to-red-500",
         shadowColor: "shadow-[6px_6px_0px_#d97706]",
     },
@@ -42,7 +42,7 @@ const WhyChooseUs = () => {
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-full w-full bg-blue-600"></span>
                     </span>
-                    Why <span className="text-blue-600 inline-block" data-aos="fade-up">VSS</span>
+                    Why <span className="text-blue-600 inline-block" data-aos="fade-up">Vrindavan</span>
                 </h2>
             </div>
 

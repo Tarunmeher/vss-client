@@ -7,7 +7,7 @@ const AboutBanner = () => {
             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center">
                 <h1 className="text-white text-4xl font-bold">About</h1>
                 <p className="text-white mt-2">
-                    <Link to='/'> <span className="text-gray-300">Home</span></Link> <span className="text-yellow-400">&raquo; VSS About</span>
+                    <Link to='/'> <span className="text-gray-300">Home</span></Link> <span className="text-yellow-400">&raquo; About</span>
                 </p>
             </div>
         </div>
