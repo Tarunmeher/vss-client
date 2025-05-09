@@ -30,7 +30,7 @@ const Home = () => {
             <EventGallery />
             {/* <CourseSlider /> */}
             <NewsAndInformation />
-            <StudentAndStafDetails />
+            {/* <StudentAndStafDetails /> */}
             <WhyChooseUs />
             {/* <EventCarousel /> */}
             {/* <Visit /> */}

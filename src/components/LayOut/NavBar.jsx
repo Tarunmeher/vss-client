@@ -91,8 +91,8 @@ const Navbar = () => {
             </button>
             {dropdownOpen === 5 && (
               <div className="absolute left-0 mt-2 w-36 bg-[#fff] shadow-lg py-2 text-black z-50 text-sm">
-                <Link to="/Gallery/vss-gallery" className="block px-3 py-1">VSS Gallery</Link>
-                <Link to="/Gallery/vss-events" className="block px-3 py-1">VSS Events</Link>
+                <Link to="/Gallery/vss-gallery" className="block px-3 py-1">Gallery</Link>
+                <Link to="/Gallery/vss-events" className="block px-3 py-1">Events</Link>
               </div>
             )}
           </li>
@@ -108,15 +108,15 @@ const Navbar = () => {
             </button>
             {dropdownOpen === 3 && (
               <div className="absolute left-0 mt-2 w-48 bg-[#fff] shadow-lg py-2 text-black z-50 text-sm">
-                <Link to="/programmes" className="block px-3 py-1">
+                {/* <Link to="/programmes" className="block px-3 py-1">
                   Programmes
-                </Link>
+                </Link> */}
                 <Link to="/examination" className="block px-3 py-1">
                   Examination
                 </Link>
-                <Link to="/Academics/staff/staf-details" className="block px-3 py-1">
+                {/* <Link to="/Academics/staff/staf-details" className="block px-3 py-1">
                   Staff
-                </Link>
+                </Link> */}
                 <Link to="/notification" className="block px-3 py-1">
                   Notification
                 </Link>
@@ -221,8 +221,8 @@ const Navbar = () => {
               </button>
               {dropdownOpen === 5 && (
                 <div className="absolute left-0 mt-2 w-36 bg-[#fff] shadow-lg py-2 text-black z-50 text-sm">
-                  <Link to="/Gallery/vss-gallery" className="block px-3 py-1">VSS Gallery</Link>
-                  <Link to="/Gallery/vss-events" className="block px-3 py-1">VSS Events</Link>
+                  <Link to="/Gallery/vss-gallery" className="block px-3 py-1">Gallery</Link>
+                  <Link to="/Gallery/vss-events" className="block px-3 py-1">Events</Link>
                 </div>
               )}
             </li>
@@ -238,9 +238,9 @@ const Navbar = () => {
               </button>
               {dropdownOpen === 3 && (
                 <div className="absolute left-4 mt-2 w-36 bg-[#fff] shadow-lg py-2 text-black z-50 text-sm">
-                  <Link to="/programmes" className="block px-3 py-1">Programmes</Link>
+                  {/* <Link to="/programmes" className="block px-3 py-1">Programmes</Link> */}
                   <Link to="/examination" className="block px-3 py-1">Examination</Link>
-                  <Link to="/Academics/staff/staf-details" className="block px-3 py-1">Staff</Link>
+                  {/* <Link to="/Academics/staff/staf-details" className="block px-3 py-1">Staff</Link> */}
                   <Link to="/notification" className="block px-3 py-1">Notification</Link>
                 </div>
               )}

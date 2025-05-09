@@ -14,7 +14,7 @@ const EnrollSection = () => {
 
                 {/* Text Content */}
                 <div>
-                    <h2 className="text-xl md:text-2xl font-semibold">ENROLL A CHILD</h2>
+                    <h2 className="text-xl md:text-2xl font-semibold">Want to enroll you child ?</h2>
                     <p className="text-sm mt-1 md:mt-2">
                         We provide the perfect education for your child every day
                     </p>
@@ -22,9 +22,9 @@ const EnrollSection = () => {
             </div>
 
             {/* Contact Us Button */}
-            <Link to='/contact'>
-                <button className="border border-white text-white rounded-full px-5 py-1.5 hover:bg-white hover:text-[#002B4E] transition">
-                    CONTACT US
+            <Link to='/admission'>
+                <button className="border border-white text-white rounded-full px-5 py-1.5 hover:bg-yellow-500 hover:text-[#002B4E] transition">
+                    Enquiry Now !
                 </button>
             </Link>
         </div>
