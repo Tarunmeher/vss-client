@@ -155,10 +155,10 @@ export default function SchoolFeatures() {
     return (
         <div className="max-w-7xl mx-auto px-4 py-4">
             {/* Header */}
-            <div className="mb-12" data-aos="fade-down">
-                <h2 className="text-3xl mx-5 font-bold text-gray-800">Facilities</h2>
+            {/* <div className="mb-12" data-aos="fade-down">
+                <h2 className="text-3xl mx-5 font-bold text-gray-800 text-center">Facilities</h2>
 
-            </div>
+            </div> */}
 
             {/* Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
