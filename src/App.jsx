@@ -25,6 +25,11 @@ import MyProfile from "./pages/Admin/MyProfile/MyProfile";
 import Admission from "./pages/Admission/Admission";
 import AdmissionInquiry from "./pages/Admin/AdmissionEnquiry/AdmissionEnquiry";
 import Recruitment from "./pages/Recruitment/Recruitment";
+import GameZone from "./pages/GameZone/GameZone";
+import MathQuiz from "./pages/GameZone/MathQuiz";
+import WordPuzzle from "./pages/GameZone/WordPuzzle";
+import MemoryMatch from "./pages/GameZone/MemoryMatch";
+
 import { Toaster } from "react-hot-toast";
 
 const App = () => {
@@ -53,6 +58,10 @@ const App = () => {
             <Route path="Academics/staff/staf-details" element={<StafDetails />} />
             <Route path="teacher/:id" element={<TeacherInfo />} />
             <Route path="Notification" element={<Notification />} />
+            <Route path="gamezone" element={<GameZone />} />
+            <Route path="gamezone/math-quiz" element={<MathQuiz />} />
+            <Route path="gamezone/word-puzzle" element={<WordPuzzle />} />
+            <Route path="gamezone/memory-match" element={<MemoryMatch />} />
           </Route>
         )}
 

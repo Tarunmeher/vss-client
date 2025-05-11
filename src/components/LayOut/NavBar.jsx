@@ -173,11 +173,17 @@ const Navbar = () => {
               CONTACT
             </button>
           </Link>
+          {/* <Link to="/gamezone">
+            <button className="text-white focus:outline-none text-sm hover:text-yellow">
+              GAME ZONE
+            </button>
+          </Link> */}
           <Link to="/admin/login">
             <button className="bg-white text-[#014b8f] px-3 py-1 rounded-sm text-sm font-medium mr-2 hover:bg-gray-200">
               Login
             </button>
           </Link>
+
         </ul>
 
         {/* Mobile Menu Button */}
@@ -277,6 +283,13 @@ const Navbar = () => {
                 CONTACT
               </Link>
             </li>
+            {/* <li>
+              <Link to="/gamezone">
+                <button className="text-white focus:outline-none text-sm hover:text-yellow">
+                  GAME ZONE
+                </button>
+              </Link>
+            </li> */}
             <div className="flex space-x-2 mt-2">
               <Link to="/admin/login">
                 <button className="bg-white text-[#014b8f] px-3 py-1  text-sm font-medium hover:bg-gray-200">
