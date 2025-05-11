@@ -126,12 +126,12 @@ export default function AdmissionForm() {
                 <option value="Nursery">Nursery</option>
                 <option value="LKG">LKG</option>
                 <option value="UKG">UKG</option>
-                <option value="1">1st Class</option>
-                <option value="2">2nd Class</option>
-                <option value="3">3rd Class</option>
-                <option value="4">4th Class</option>
-                <option value="5">5th Class</option>
-                <option value="6">6th Class</option>
+                <option value="1st Class">1st Class</option>
+                <option value="2nd Class">2nd Class</option>
+                <option value="3rd Class">3rd Class</option>
+                <option value="4th Class">4th Class</option>
+                <option value="5th Class">5th Class</option>
+                <option value="6th Class">6th Class</option>
               </select>
             </div>
             <div>

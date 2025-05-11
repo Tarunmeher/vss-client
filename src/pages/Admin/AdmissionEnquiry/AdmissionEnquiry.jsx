@@ -1,50 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Search, Plus, Edit, Trash2, Phone, Calendar, BookOpen, Package } from 'lucide-react';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import InquiryModal from './InquiryModal';
+import Loader from "../../../components/common/loader";
 
 const AdmissionInquiry = () => {
     // Sample inquiry data
-    const [inquiries, setInquiries] = useState([
-        {
-            id: 1,
-            name: 'Rahul Sharma',
-            mobile: '9876543210',
-            standard: 'Class 10',
-            package: 'Gold',
-            enquiryDate: '2023-05-15',
-            status: 'Pending'
-        },
-        {
-            id: 2,
-            name: 'Priya Patel',
-            mobile: '8765432109',
-            standard: 'Class 12',
-            package: 'Platinum',
-            enquiryDate: '2023-05-18',
-            status: 'Follow Up'
-        },
-        {
-            id: 3,
-            name: 'Amit Singh',
-            mobile: '7654321098',
-            standard: 'Class 9',
-            package: 'Silver',
-            enquiryDate: '2023-05-20',
-            status: 'Converted'
-        },
-        {
-            id: 4,
-            name: 'Neha Gupta',
-            mobile: '6543210987',
-            standard: 'Class 11',
-            package: 'Gold',
-            enquiryDate: '2023-05-22',
-            status: 'Rejected'
-        }
-    ]);
-
+    const [inquiries, setInquiries] = useState([]);
+    const [uploading, setUploading] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentInquiry, setCurrentInquiry] = useState({
@@ -59,10 +23,10 @@ const AdmissionInquiry = () => {
     const [isEditing, setIsEditing] = useState(false);
 
     // Filter inquiries based on search term
-    const filteredInquiries = inquiries.filter(inquiry => {
+    const filteredInquiries = inquiries.length && inquiries.filter(inquiry => {
         const searchLower = searchTerm.toLowerCase();
         return (
-            inquiry.name.toLowerCase().includes(searchLower) ||
+            inquiry.std_name.toLowerCase().includes(searchLower) ||
             inquiry.mobile.includes(searchTerm) ||
             inquiry.standard.toLowerCase().includes(searchLower) ||
             inquiry.package.toLowerCase().includes(searchLower)
@@ -75,58 +39,73 @@ const AdmissionInquiry = () => {
         return new Date(dateString).toLocaleDateString('en-US', options);
     };
 
-    // Handle add new inquiry
-    const handleAdd = () => {
-        setCurrentInquiry({
-            id: '',
-            name: '',
-            mobile: '',
-            standard: '',
-            package: 'Silver',
-            enquiryDate: new Date().toISOString().split('T')[0],
-            status: 'Pending'
-        });
-        setIsEditing(false);
-        setIsModalOpen(true);
-    };
-
-    // Handle edit inquiry
-    const handleEdit = (inquiry) => {
-        setCurrentInquiry(inquiry);
-        setIsEditing(true);
-        setIsModalOpen(true);
-    };
 
     // Handle delete inquiry
-    const handleDelete = (id) => {
-        if (window.confirm('Are you sure you want to delete this inquiry?')) {
-            setInquiries(inquiries.filter(inquiry => inquiry.id !== id));
-            toast.success('Inquiry deleted successfully!');
+    const handleDelete = async (id) => {
+        if (window.confirm('Are you sure you want to delete this enquiry?')) {
+            try {
+                const currentUrl = window.location.href;
+                let url = import.meta.env.VITE_SERVICE_URL;
+                if (currentUrl.includes('https')) {
+                    url = url.replace('http', 'https')
+                }
+                setUploading(true);
+                const res = await fetch(`${url}/deleteEnquiry`, {
+                    method: 'DELETE',
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ id: id }),
+                });
+
+                const data = await res.json();
+                if (data.status == 'success') {
+                    setUploading(false);
+                    toast.success(data.message);
+                    getEnquiry();
+                } else {
+                    setUploading(false);
+                    toast.error(data.message || 'Failed to Delete');
+                }
+            } catch (err) {
+                setUploading(false);
+                console.error(err);
+                toast.error('Something went wrong');
+            }
         }
     };
 
-    // Handle form submission
-    const handleSubmit = (e) => {
-        e.preventDefault();
 
-        if (isEditing) {
-            // Update existing inquiry
-            setInquiries(inquiries.map(inquiry =>
-                inquiry.id === currentInquiry.id ? currentInquiry : inquiry
-            ));
-            toast.success('Inquiry updated successfully!');
-        } else {
-            // Add new inquiry
-            const newInquiry = {
-                ...currentInquiry,
-                id: Math.max(...inquiries.map(i => i.id)) + 1
-            };
-            setInquiries([...inquiries, newInquiry]);
-            toast.success('New inquiry added successfully!');
+    const getEnquiry = async () => {
+        try {
+            const currentUrl = window.location.href;
+            let url = import.meta.env.VITE_SERVICE_URL;
+            if (currentUrl.includes('https')) {
+                url = url.replace('http', 'https')
+            }
+
+            const res = await fetch(`${url}/getEnquires`, {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' },
+                // body: JSON.stringify({}),
+            });
+
+            const data = await res.json();
+            if (res.ok) {
+                setInquiries(data.results);
+            } else {
+                setInquiries([]);
+            }
+        } catch (err) {
+            console.error(err);
+            setInquiries([]);
         }
+    }
 
-        setIsModalOpen(false);
-    };
+    useEffect(() => {
+        getEnquiry();
+    }, []);
+
 
     // Handle input changes
     const handleInputChange = (e) => {
@@ -160,13 +139,13 @@ const AdmissionInquiry = () => {
                             className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         />
                     </div>
-                    <button
+                    {/* <button
                         onClick={handleAdd}
                         className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition duration-200 flex items-center gap-2"
                     >
                         <Plus className="h-4 w-4" />
                         Add Inquiry
-                    </button>
+                    </button> */}
                 </div>
 
                 <div className="overflow-x-auto">
@@ -179,15 +158,13 @@ const AdmissionInquiry = () => {
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Standard</th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Package</th>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Enquiry Date</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                             </tr>
                         </thead>
                         <tbody className="bg-white divide-y divide-gray-200">
-                            {filteredInquiries.map((inquiry, index) => (
+                            {filteredInquiries.length && filteredInquiries.map((inquiry, index) => (
                                 <tr key={inquiry.id} className="hover:bg-gray-50">
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{index + 1}</td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{inquiry.name}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{inquiry.std_name}</td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                         <div className="flex items-center">
                                             <Phone className="h-4 w-4 text-gray-500 mr-1" />
@@ -209,26 +186,10 @@ const AdmissionInquiry = () => {
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                         <div className="flex items-center">
                                             <Calendar className="h-4 w-4 text-gray-500 mr-1" />
-                                            {formatDate(inquiry.enquiryDate)}
+                                            {formatDate(inquiry.created_at)}
                                         </div>
                                     </td>
-                                    <td className="px-6 py-4 whitespace-nowrap">
-                                        <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
-                      ${inquiry.status === 'Converted' ? 'bg-green-100 text-green-800' :
-                                                inquiry.status === 'Follow Up' ? 'bg-yellow-100 text-yellow-800' :
-                                                    inquiry.status === 'Rejected' ? 'bg-red-100 text-red-800' :
-                                                        'bg-gray-100 text-gray-800'}`}>
-                                            {inquiry.status}
-                                        </span>
-                                    </td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                        <button
-                                            onClick={() => handleEdit(inquiry)}
-                                            className="text-blue-600 hover:text-blue-900 mr-3 flex items-center gap-1"
-                                        >
-                                            <Edit className="h-4 w-4" />
-                                            Edit
-                                        </button>
                                         <button
                                             onClick={() => handleDelete(inquiry.id)}
                                             className="text-red-600 hover:text-red-900 flex items-center gap-1"
@@ -253,6 +214,13 @@ const AdmissionInquiry = () => {
                     onChange={handleInputChange}
                     onSubmit={handleSubmit}
                 />
+            )}
+
+            {/* ToastContainer added here */}
+            <ToastContainer position="top-right" autoClose={3000} />
+
+            {uploading && (
+                <Loader></Loader>
             )}
 
         </div>
