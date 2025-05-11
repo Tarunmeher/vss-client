@@ -102,7 +102,7 @@ const Recruitments = () => {
                 key={job.id}
                 className={index % 2 === 0 ? 'bg-white hover:bg-gray-50' : 'bg-gray-50 hover:bg-gray-100'}
               >
-                <td className="border border-gray-300 px-2 py-2 text-sm text-gray-600">{job.id}</td>
+                <td className="border border-gray-300 px-2 py-2 text-sm text-gray-600">{index+1}</td>
                 <td className="border border-gray-300 px-2 py-2 text-sm font-medium text-gray-800">{job.post_name}</td>
                 <td className="border border-gray-300 px-2 py-2 text-sm text-gray-600">{job.description}</td>
                 <td className="border border-gray-300 px-2 py-2 text-sm text-gray-600">{new Date(job.last_date_of_application).toLocaleDateString()}</td>
