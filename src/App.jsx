@@ -24,6 +24,8 @@ import Help from "./pages/Admin/Help/Help";
 import MyProfile from "./pages/Admin/MyProfile/MyProfile";
 import Admission from "./pages/Admission/Admission";
 import AdmissionInquiry from "./pages/Admin/AdmissionEnquiry/AdmissionEnquiry";
+import Recruitment from "./pages/Recruitment/Recruitment";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   const location = useLocation();
@@ -34,6 +36,7 @@ const App = () => {
 
   return (
     <div className="bg-multiple min-h-screen">
+      <Toaster position="top-right" reverseOrder={false} />
       <Routes>
         {/* Main Layout with Navbar */}
         {!isLPSPage && !isTillotammaPage && (
@@ -41,6 +44,7 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path="contact" element={<ContactUs />} />
             <Route path="admission" element={<Admission />} />
+            <Route path="recruitment" element={<Recruitment />} />
             <Route path="apply/applysummercourse" element={<SummerCourseApply />} />
             <Route path="apply/ViewStudentDetail" element={<ViewStudentDetail />} />
             <Route path="Gallery/vss-gallery" element={<Gallery />} />

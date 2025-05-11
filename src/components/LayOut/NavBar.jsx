@@ -163,6 +163,11 @@ const Navbar = () => {
               ADMISSION
             </button>
           </Link>
+          <Link to='/recruitment' className="relative group dropdown-container">
+            <button className="text-white focus:outline-none text-sm">
+              RECRUITMENT
+            </button>
+          </Link>
           <Link to='/contact' className="relative group dropdown-container">
             <button className="text-white focus:outline-none text-sm">
               CONTACT
@@ -260,6 +265,11 @@ const Navbar = () => {
             <Link to='/admission' className="relative group dropdown-container">
               <button className="text-white focus:outline-none text-sm">
                 ADMISSION
+              </button>
+            </Link>
+            <Link to='/recruitment' className="relative group dropdown-container">
+              <button className="text-white focus:outline-none text-sm">
+                RECRUITMENT
               </button>
             </Link>
             <li>
