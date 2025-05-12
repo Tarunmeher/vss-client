@@ -24,6 +24,7 @@ import Help from "./pages/Admin/Help/Help";
 import MyProfile from "./pages/Admin/MyProfile/MyProfile";
 import Admission from "./pages/Admission/Admission";
 import AdmissionInquiry from "./pages/Admin/AdmissionEnquiry/AdmissionEnquiry";
+import Reqruitments from "./pages/Admin/Recruitment/ManageRecruitment";
 import Recruitment from "./pages/Recruitment/Recruitment";
 import GameZone from "./pages/GameZone/GameZone";
 import MathQuiz from "./pages/GameZone/MathQuiz";
@@ -91,6 +92,7 @@ const App = () => {
           <Route path="/admin/Enquiry" element={<AdmissionInquiry />} />
           <Route path="/admin/help" element={<Help />} />
           <Route path="/admin/my-profile" element={<MyProfile />} />
+          <Route path="/admin/Reqruitment" element={<Reqruitments />} />
         </Route>
         <Route path="/admin/login" element={<Login />} />
         {/* <Route path="/admin/signup" element={<SignUp />} /> */}

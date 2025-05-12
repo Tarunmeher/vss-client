@@ -19,6 +19,7 @@ const menuItems = [
   { label: "Manage News & Notification", icon: <FaNewspaper />, path: "/admin/notifications" },
   { label: "Manage Gallery", icon: <FaImages />, path: "/admin/gallery" },
   { label: "Admission Enquiry", icon: <FaImages />, path: "/admin/Enquiry" },
+  { label: "Reqruitment", icon: <FaImages />, path: "/admin/Reqruitment" },
 ];
 
 
