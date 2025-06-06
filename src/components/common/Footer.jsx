@@ -1,4 +1,4 @@
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 import logo from '../../assets/images/logoo.jpg'
 
 
@@ -36,11 +36,40 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div className="flex space-x-4 mt-4">
-            <a href="#" className="text-gray-400 hover:text-white text-xl"><FaFacebook /></a>
-            <a href="#" className="text-gray-400 hover:text-white text-xl"><FaTwitter /></a>
-            <a href="#" className="text-gray-400 hover:text-white text-xl"><FaInstagram /></a>
-            <a href="#" className="text-gray-400 hover:text-white text-xl"><FaLinkedin /></a>
+            <a
+              href="https://www.facebook.com/vrindavan.educationalinstitutions"
+              className="text-gray-400 hover:text-white text-xl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebook />
+            </a>
+            <a
+              href="https://x.com/vrindavanbhpt"
+              className="text-gray-400 hover:text-white text-xl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaTwitter />
+            </a>
+            <a
+              href="https://www.instagram.com/vrindavansmartschool"
+              className="text-gray-400 hover:text-white text-xl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://www.youtube.com/@vrindavansmartschool"
+              className="text-gray-400 hover:text-white text-xl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaYoutube />
+            </a>
           </div>
+
         </div>
       </div>
 
