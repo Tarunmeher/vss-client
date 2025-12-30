@@ -16,7 +16,7 @@ import { Typewriter } from "react-simple-typewriter";
 const slides = [
   {
     title: "Vrindavan Smart School",
-    description: "Innovative e-learning solutions for the next generation of students.",
+    description: "CBSE pattern school with indian culture and tradition",
     image: import.meta.env.VITE_SERVICE_URL + '/siteimages/collegebnr.jpg',
     // image: "https://cdn.pixabay.com/photo/2020/12/15/13/54/children-5833719_1280.jpg"
     // link: "/tillotamma-home",
@@ -57,14 +57,14 @@ const Hero = () => {
   useEffect(() => {
     setTimeout(function () {
       nextSlide();
-    }, 2000);
+    }, 5000);
   }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     setTimeout(function () {
       nextSlide();
-    }, 2000);
+    }, 5000);
   };
 
   const prevSlide = () => {
