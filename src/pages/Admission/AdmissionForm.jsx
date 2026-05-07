@@ -132,6 +132,7 @@ export default function AdmissionForm() {
                 <option value="4th Class">4th Class</option>
                 <option value="5th Class">5th Class</option>
                 <option value="6th Class">6th Class</option>
+                <option value="7th Class">7th Class</option>
               </select>
             </div>
             <div>

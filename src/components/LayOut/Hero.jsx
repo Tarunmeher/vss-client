@@ -13,7 +13,7 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 import { HiArrowRight } from "react-icons/hi";
 import { Typewriter } from "react-simple-typewriter";
 
-const slides = [
+const staticslides = [
   {
     title: "Vrindavan Smart School",
     description: "CBSE pattern school with indian culture and tradition",
@@ -54,7 +54,36 @@ const socialLinks = [
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [slides, setSlides] = useState([]);
+
+  const fetchSlides = async () => {
+    try {
+      const currentUrl = window.location.href;
+      let url = import.meta.env.VITE_SERVICE_URL;
+      if (currentUrl.includes('https')) {
+        url = url.replace('http', 'https')
+      }
+      const res = await fetch(`${url}/getBannerImages`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+        // body: JSON.stringify({}),
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        setSlides(data.results);
+      } else {
+        setSlides(staticslides);
+      }
+    } catch (err) {
+      console.error(err);
+      setSlides(staticslides);
+    }
+  }
+
+
   useEffect(() => {
+    fetchSlides();
     setTimeout(function () {
       nextSlide();
     }, 5000);
@@ -73,7 +102,7 @@ const Hero = () => {
 
   return (
     <div id="homebannermobile" className="relative w-full h-[300px] lg:h-screen md:h-[400px] overflow-hidden">
-      {slides.map((slide, index) => (
+      {slides && slides.map((slide, index) => (
         <div
           key={index}
           className={`absolute inset-0 transition-transform duration-700 ease-in-out ${index === currentSlide ? "translate-x-0" : "translate-x-full"

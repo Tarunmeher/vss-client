@@ -2,6 +2,7 @@ import { FaChalkboardTeacher, FaUserGraduate, FaUserTie, FaUserShield } from "re
 // import SalaryStatus from "./SalaryStatus";
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ManageHomePage from "./ManageHomePage";
 
 const stats = [
     {
@@ -59,9 +60,9 @@ const AdminDashBoard = () => {
                     </div>
                 ))}
             </div>
-            {/* <div className="mt-10">
-                <SalaryStatus />
-            </div> */}
+            <div className="mt-10">
+                <ManageHomePage />
+            </div>
 
         </>
     );
