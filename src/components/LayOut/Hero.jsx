@@ -17,27 +17,27 @@ const staticslides = [
   {
     title: "Vrindavan Smart School",
     description: "CBSE pattern school with indian culture and tradition",
-    image: import.meta.env.VITE_SERVICE_URL + '/siteimages/collegebnr.jpg',
+    profile_pic: import.meta.env.VITE_SERVICE_URL + '/siteimages/collegebnr.jpg',
     // image: "https://cdn.pixabay.com/photo/2020/12/15/13/54/children-5833719_1280.jpg"
     // link: "/tillotamma-home",
   },
   {
     title: "Vrindavan Smart School",
     description: "Shaping the future with quality education.",
-    image: import.meta.env.VITE_SERVICE_URL + '/siteimages/class4.jpg',
+    profile_pic: import.meta.env.VITE_SERVICE_URL + '/siteimages/class4.jpg',
     // image: "https://cdn.pixabay.com/photo/2017/10/01/14/14/street-2805643_1280.jpg"
     // link: "/tillotamma-home",
   },
   {
     title: "Vrindavan Smart School",
     description: "Shaping the future with quality education.",
-    image: import.meta.env.VITE_SERVICE_URL + '/siteimages/entrance.jpg',
+    profile_pic: import.meta.env.VITE_SERVICE_URL + '/siteimages/entrance.jpg',
     // image: "https://cdn.pixabay.com/photo/2023/08/31/15/37/ai-generated-8225400_1280.png"
   },
   {
     title: "Vrindavan Smart School",
     description: "Shaping the future with quality education.",
-    image: import.meta.env.VITE_SERVICE_URL + '/siteimages/class6.jpg',
+    profile_pic: import.meta.env.VITE_SERVICE_URL + '/siteimages/class6.jpg',
     // image: "https://cdn.pixabay.com/photo/2024/05/11/06/39/back-to-school-8754080_1280.jpg"
     // link: "/lps-home",
   },
@@ -121,7 +121,7 @@ const Hero = () => {
             </video>
           ) : (
             <img
-              src={slide.image}
+              src={slide.profile_pic.includes('siteimages')?slide.profile_pic:'/api/files/'+slide.profile_pic}
               alt={slide.title.toUpperCase()}
               className="w-full h-full object-cover"
             />
